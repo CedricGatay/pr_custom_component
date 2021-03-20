@@ -1,11 +1,9 @@
-# PR Custom Component
-
 [![GitHub Release][releases-shield]][releases]
 [![GitHub Activity][commits-shield]][commits]
-[![License][license-shield]](LICENSE)
+[![License][license-shield]][license]
 
 [![hacs][hacsbadge]][hacs]
-![Project Maintenance][maintenance-shield]
+[![Project Maintenance][maintenance-shield]][user_profile]
 [![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
 
 [![Discord][discord-shield]][discord]
@@ -15,36 +13,23 @@ Create a custom component from a Home Assistant Integration Pull Request. Use th
 
 **Warning: This is experimental and may fail if the Pull Request is for a substantially different version of HA or modifies more than the integration. Do not report bugs to the core authors!**
 
+**This component will set up the following platforms.**
+
 | Platform        | Description                                                     |
 | --------------- | --------------------------------------------------------------- |
 | `binary_sensor` | Show whether the Pull Request has been updated since install.   |
 | `sensor`        | Show's the timestamp of the last change to the Pull Request     |
 | `switch`        | Enable to automatically update to the latest on the next check. |
 
+{% if not installed %}
+
 ## Installation
 
-0. Use HACS after adding this `https://github.com/alandtse/pr_custom_component` as a custom repository. Skip to 6.
-1. If no HACS, use the tool of choice to open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
-2. If you do not have a `custom_components` directory (folder) there, you need to create it.
-3. In the `custom_components` directory (folder) create a new folder called `pr_custom_component`.
-4. Download _all_ the files from the `custom_components/pr_custom_component/` directory (folder) in this repository.
-5. Place the files you downloaded in the new directory (folder) you created.
-6. Restart Home Assistant.
-7. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "PR Custom Component"
+1. Click install.
+2. Reboot Home Assistant.
+3. Hard refresh browser cache.
 
-Using your HA configuration directory (folder) as a starting point you should now also have this:
-
-```text
-custom_components/pr_custom_component/translations/en.json
-custom_components/pr_custom_component/__init__.py
-custom_components/pr_custom_component/api.py
-custom_components/pr_custom_component/binary_sensor.py
-custom_components/pr_custom_component/config_flow.py
-custom_components/pr_custom_component/const.py
-custom_components/pr_custom_component/manifest.json
-custom_components/pr_custom_component/sensor.py
-custom_components/pr_custom_component/switch.py
-```
+{% endif %}
 
 ## Installing an Auto Generated Custom Component
 
@@ -58,7 +43,8 @@ custom_components/pr_custom_component/switch.py
 
 ## Upgrading an Auto Generated Custom Component
 
-1. In the HA UI go to "Configuration" -> "Integrations", select the PR Custom Component with title `Tesla` Component's `...` menu and reload. This will automatically download the latest files from the Pull Request
+1. In the HA UI go to "Configuration" -> "Integrations", select the PR Custom Component with title `Tesla` Component's `...` menu and reload. This will automatically download the latest files from the Pull Request.
+   1. If the switch for autoupdate is enabled, an update is automatically downloaded at the next refresh.
 2. Restart Home Assistant.
 
 ## Uninstalling an Auto Generated Custom Component
@@ -70,13 +56,9 @@ custom_components/pr_custom_component/switch.py
 3. Restart Home Assistant.
 4. Hard refresh your browser
 
-<!---->
-
-## Contributions are welcome!
-
-If you want to contribute to this please read the [Contribution guidelines](CONTRIBUTING.md)
-
 _Component built with [integration_blueprint][integration_blueprint]._
+
+<!---->
 
 ---
 
@@ -92,6 +74,8 @@ _Component built with [integration_blueprint][integration_blueprint]._
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
 [forum]: https://community.home-assistant.io/
 [license-shield]: https://img.shields.io/github/license/alandtse/pr_custom_component.svg?style=for-the-badge
+[license]: LICENSE
 [maintenance-shield]: https://img.shields.io/badge/maintainer-Alan%20Tse%20%40alandtse-blue.svg?style=for-the-badge
 [releases-shield]: https://img.shields.io/github/release/alandtse/pr_custom_component.svg?style=for-the-badge
 [releases]: https://github.com/alandtse/pr_custom_component/releases
+[user_profile]: https://github.com/alandtse
